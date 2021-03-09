@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html class="no-js">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>2019</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link
+      href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<style>
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
+
+@font-face {
+  font-family: Bebas;
+  src: url('../fonts/BebasKai-Regular.otf');
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  color: #1b1b1b;
+  background-color: #000;
+  font-family: Montserrat, Arial, Helvetica, sans-serif;
+  font-weight: 700;
+}
+
+a {
+  text-decoration: none;
+  color: #1b1b1b;
+}
+
+.btn {
+    margin-top: -10%;
+  border: 1.5px solid #1b1b1b;
+  border-radius: 0.75rem;
+  padding: 0.50rem 1.00rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn:hover {
+  color: #000;
+  background: #fff;
+}
+
+.wrapper {
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  perspective: 300px;
+}
+
+.parallax__group {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  transform-style: preserve-3d;
+}
+
+.parallax__layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.sky {
+  background: url('../img/sky.png') no-repeat center;
+  background-size: cover;
+  transform: translateZ(-600px) scale(3);
+  z-index: 1;
+}
+
+.bushes {
+  background: url('../img/bushes.png') no-repeat center;
+  background-size: cover;
+  transform: translateZ(-525px) scale(2.75);
+  z-index: 2;
+}
+
+.water {
+  background: url('../img/water.png') no-repeat center;
+  background-size: cover;
+  transform: translateZ(-400px) scale(2.33333333);
+  z-index: 3;
+}
+
+.people1 {
+  background: url('../img/people1.png') no-repeat center;
+  background-size: cover;
+  transform: translateZ(-250px) scale(1.833333333);
+  z-index: 4;
+}
+
+.people2 {
+  background: url('../img/people2.png') no-repeat center;
+  background-size: cover;
+  transform: translateZ(-125px) scale(1.4167);
+  z-index: 5;
+}
+
+.people3 {
+  background: url('../img/people3.png') no-repeat center;
+  background-size: cover;
+  transform: translateZ(0) scale(1);
+  z-index: 6;
+}
+
+.hero-text {
+  background: linear-gradient(
+      #ffffff 30%,
+    #BDFFF3 50%,
+    rgba(74, 194, 154, 1) 90%
+    
+  );
+  background-size: cover;
+  transform: translateZ(0) scale(1);
+  z-index: 7;
+}
+
+.hero-text h2 {
+  font-size: 1.25rem;
+  position: absolute;
+  left: 2.5rem;
+  top: 2.5rem;
+}
+
+.hero-text ul {
+  font-size: 0.75rem;
+  position: absolute;
+  right: 2.5rem;
+  top: 2.5rem;
+}
+
+.hero-text ul li {
+  margin-left: 2.5rem;
+  list-style-type: none;
+  float: left;
+  visibility: hidden;
+}
+
+.hero-text ul li:nth-of-type(3) {
+  visibility: visible;
+}
+
+.year-container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 17rem;
+  height: 25rem;
+}
+
+.year-container h1 {
+  font-family: Bebas, sans-serif;
+  font-weight: 400;
+  position: absolute;
+  font-size: 12.5rem;
+}
+
+.year-container h1:nth-of-type(1) {
+  top: 10%;
+  left:-50%
+}
+
+.year-container h1:nth-of-type(2) {
+  left: 0%;
+  bottom: 90;
+}
+
+.year-container h1:nth-of-type(3) {
+  top: 0;
+  left: 40%;
+}
+
+.year-container h1:nth-of-type(4) {
+  right: 0;
+  bottom: 40%;
+}
+.year-container h1:nth-of-type(5) {
+  right: 0;
+  left: 90%;
+}
+
+
+.social-container {
+  position: absolute;
+  left: 2.5rem;
+  bottom: 2.5rem;
+}
+
+.social-container i {
+  font-size: 1.25rem;
+  margin-right: 0.25rem;
+}
+
+.info-container {
+  background: #4AC29A;
+  transform: translateZ(0) scale(1);
+  z-index: 8;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.info-container img {
+  width: 75%;
+  margin-bottom: 2.5rem;
+  filter: saturate(0.65);
+}
+
+.info-container h2,
+.info-container p {
+  margin-bottom: 1rem;
+}
+
+.text-container p:nth-of-type(1) {
+  font-weight: 400;
+  font-size: 0.75rem;
+  margin: 1rem 2.5rem;
+}
+
+.text-container p:nth-of-type(2) {
+  font-size: 0.6rem;
+  margin-bottom: 3rem;
+}
+
+@media (min-width: 760px) {
+  .hero-text ul li {
+    visibility: visible;
+  }
+
+  .info-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 3rem;
+    align-items: center;
+    text-align: left;
+  }
+
+  .info-container img {
+    justify-self: end;
+    width: 75%;
+  }
+
+  .text-container p:nth-of-type(1) {
+    font-size: 1rem;
+    width: 75%;
+    margin: 1rem 0;
+  }
+
+  .text-container p:nth-of-type(1) {
+    font-size: 0.86rem;
+  }
+  h1{
+      color: #4AC29A;
+  }
+}
+
+@media (min-width: 1126px) {
+  .sky,
+  .bushes,
+  .water,
+  .people1,
+  .people2,
+  .people3,
+  .hero-text {
+    background-size: contain;
+  }
+}
+
+</style>
+</head>
+
+<body> 
+    <div class="wrapper">
+    <div class="parallax__layer hero-text">
+        <h2>COVID-19 Awareness</h2>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#" class="btn">Get Started Now</a></li>
+        </ul>
+        <div class="year-container">
+            <h1>COVID</h1>
+        </div>
+   
+          <div class="social-container">
+            <a href="https://github.com/KiaanCastillo" target="_blank"
+              ><i class="icon ion-logo-github"></i></a>
+            <a href="https://www.instagram.com/craftedbykiaan/" target="_blank"
+              ><i class="icon ion-logo-instagram"></i></a>
+            <a href="https://dribbble.com/kiaancastillo" target="_blank"
+              ><i class="icon ion-logo-dribbble"></i></a>
+            <a href="https://www.youtube.com/c/KiaanCastillo" target="_blank">
+                <i class="icon ion-logo-youtube"></i></a>
+          </div>
+
+        </div>
+    </div>
+    <div class="parallax__group info-container">
+        <img src="https://images.unsplash.com/photo-1584127050037-746c151b9284?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="Lively and colourful concert" />
+        <div class="text-container">
+          <h2>This is your year.</h2>
+          <p>What would life be if we had no courage to attempt anything?</p>
+          <p>- Vincent Van Gogh</p>
+          <a href="#" class="btn">Get Started Now</a>
+        </div>
+        </div>
+</div>    
+        
+     
+      
+
+
+</body>
+
+</html>
