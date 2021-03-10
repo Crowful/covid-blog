@@ -15,8 +15,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
 <style>
+ 
+  
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
 
 @font-face {
@@ -34,7 +35,7 @@ html,
 body {
   width: 100%;
   height: 100%;
-  color: #1b1b1b;
+  color: #fff;
   background-color: #000;
   font-family: Montserrat, Arial, Helvetica, sans-serif;
   font-weight: 700;
@@ -42,14 +43,13 @@ body {
 
 a {
   text-decoration: none;
-  color: #1b1b1b;
+  color: #fff;
 }
 
 .btn {
-    margin-top: -10%;
-  border: 1.5px solid #1b1b1b;
+  border: 1.5px solid #fff;
   border-radius: 0.75rem;
-  padding: 0.50rem 1.00rem;
+  padding: 0.75rem 1.25rem;
   transition: all 0.3s ease-in-out;
 }
 
@@ -81,42 +81,41 @@ a {
 }
 
 .sky {
-  background: url('../img/sky.png') no-repeat center;
+  background: url('sky.png') no-repeat center;
   background-size: cover;
   transform: translateZ(-600px) scale(3);
   z-index: 1;
 }
 
 .bushes {
-  background: url('../img/bushes.png') no-repeat center;
+  background: url('bushes.png') no-repeat center;
   background-size: cover;
   transform: translateZ(-525px) scale(2.75);
   z-index: 2;
 }
 
 .water {
-  background: url('../img/water.png') no-repeat center;
+  background: url('water.png') no-repeat center;
   background-size: cover;
   transform: translateZ(-400px) scale(2.33333333);
   z-index: 3;
 }
 
 .people1 {
-  background: url('../img/people1.png') no-repeat center;
-  background-size: cover;
-  transform: translateZ(-250px) scale(1.833333333);
+  background: url('people1.png') no-repeat;
+  background-size: cover;float: left;
   z-index: 4;
 }
 
 .people2 {
-  background: url('../img/people2.png') no-repeat center;
+  background: url('people2.png') no-repeat center;
   background-size: cover;
   transform: translateZ(-125px) scale(1.4167);
   z-index: 5;
 }
 
 .people3 {
-  background: url('../img/people3.png') no-repeat center;
+  background: url('people3.png') no-repeat center;
   background-size: cover;
   transform: translateZ(0) scale(1);
   z-index: 6;
@@ -124,10 +123,9 @@ a {
 
 .hero-text {
   background: linear-gradient(
-      #ffffff 30%,
-    #BDFFF3 50%,
-    rgba(74, 194, 154, 1) 90%
-    
+    rgba(105, 211, 252, 0.25) 0%,
+    rgba(255, 116, 161, 0.25) 86%,
+    rgba(0, 0, 0, 1) 100%
   );
   background-size: cover;
   transform: translateZ(0) scale(1);
@@ -161,10 +159,10 @@ a {
 
 .year-container {
   position: absolute;
-  left: 50%;
-  top: 50%;
+  left:32%;
+  top: 45%;
   transform: translate(-50%, -50%);
-  width: 17rem;
+
   height: 25rem;
 }
 
@@ -173,30 +171,6 @@ a {
   font-weight: 400;
   position: absolute;
   font-size: 12.5rem;
-}
-
-.year-container h1:nth-of-type(1) {
-  top: 10%;
-  left:-50%
-}
-
-.year-container h1:nth-of-type(2) {
-  left: 0%;
-  bottom: 90;
-}
-
-.year-container h1:nth-of-type(3) {
-  top: 0;
-  left: 40%;
-}
-
-.year-container h1:nth-of-type(4) {
-  right: 0;
-  bottom: 40%;
-}
-.year-container h1:nth-of-type(5) {
-  right: 0;
-  left: 90%;
 }
 
 
@@ -212,7 +186,7 @@ a {
 }
 
 .info-container {
-  background: #4AC29A;
+  background: #000;
   transform: translateZ(0) scale(1);
   z-index: 8;
   display: flex;
@@ -271,9 +245,6 @@ a {
   .text-container p:nth-of-type(1) {
     font-size: 0.86rem;
   }
-  h1{
-      color: #4AC29A;
-  }
 }
 
 @media (min-width: 1126px) {
@@ -288,50 +259,58 @@ a {
   }
 }
 
+
 </style>
 </head>
 
-<body> 
-    <div class="wrapper">
-    <div class="parallax__layer hero-text">
+<body>
+  <div class="wrapper">
+    <div class="parallax__group hero-container">
+      <div class="parallax__layer sky"></div>
+      <div class="parallax__layer bushes"></div>
+      <div class="parallax__layer water"></div>
+      <div class="parallax__layer people1"></div>
+      <div class="parallax__layer people2"></div>
+      <div class="parallax__layer people3"></div>
+      <div class="parallax__layer hero-text">
         <h2>COVID-19 Awareness</h2>
         <ul>
           <li><a href="#">Home</a></li>
-          <li><a href="#">Contact Us</a></li>
-          <li><a href="#" class="btn">Get Started Now</a></li>
+          <li><a href="#">About us</a></li>
+          <li><a href="#" class="btn">Donate</a></li>
         </ul>
         <div class="year-container">
-            <h1>COVID</h1>
+          <h1>COVID
+            
+          </h1>
+        
         </div>
-   
-          <div class="social-container">
-            <a href="https://github.com/KiaanCastillo" target="_blank"
-              ><i class="icon ion-logo-github"></i></a>
-            <a href="https://www.instagram.com/craftedbykiaan/" target="_blank"
-              ><i class="icon ion-logo-instagram"></i></a>
-            <a href="https://dribbble.com/kiaancastillo" target="_blank"
-              ><i class="icon ion-logo-dribbble"></i></a>
-            <a href="https://www.youtube.com/c/KiaanCastillo" target="_blank">
-                <i class="icon ion-logo-youtube"></i></a>
-          </div>
-
+        <div class="social-container">
+          <a href="" target="_blank"
+            ><i class="icon ion-logo-facebook"></i
+          ></a>
+          <a href="" target="_blank"
+            ><i class="icon ion-logo-instagram"></i
+          ></a>
+          <a href="" target="_blank"
+            ><i class="icon ion-logo-youtube"></i
+          ></a>
         </div>
+      </div>
     </div>
     <div class="parallax__group info-container">
-        <img src="https://images.unsplash.com/photo-1584127050037-746c151b9284?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="Lively and colourful concert" />
-        <div class="text-container">
-          <h2>This is your year.</h2>
-          <p>What would life be if we had no courage to attempt anything?</p>
-          <p>- Vincent Van Gogh</p>
-          <a href="#" class="btn">Get Started Now</a>
-        </div>
-        </div>
-</div>    
-        
-     
+      <embed style="margin-left:10%; width:720px; height: 450px;" src="https://www.youtube.com/embed/zob-2dpRtH0" > </embed>
       
-
-
+      <div class="text-container">
+        <h2>AWARENESS IS IMPORTANT</h2>
+        <p>Most people infected with the COVID-19 virus will experience mild to moderate respiratory illness and recover <br>
+          without requiring special treatment.  Older people, and those with underlying medical problems like cardiovascular <br>
+          disease, diabetes, chronic respiratory disease, and cancer are more likely to develop serious illness. </p>
+        <p>- World Health Orgnization</p>
+        <a href="#" class="btn">BE PART OF OUR ORGANIZATION</a>
+      </div>
+    </div>
+  </div>
 </body>
 
 </html>
